@@ -136,8 +136,8 @@ r(X) :- source(X).
 r(Y) :- in(X, Y), source(X).
 r(Y) :- in(X, Y), r(X).
 :- not r(X), target(X).
-:- v(X), not #count{X, Y : in(X, Y)} <= 1.
-:- v(Y), not #count{X, Y : in(X, Y)} <= 1.
+:- v(X), 2 {in(X, Y)}.
+:- v(Y), 2 {in(X, Y)}.
 :- in(X, Y), target(X).
 :- in(X, Y), source(Y).
 :- in(X, Y), not r(X).
