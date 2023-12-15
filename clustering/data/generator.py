@@ -42,9 +42,9 @@ for i in range(N - 1):
     for j in range(i + 1, N):
         anomaly = random.random() < anomaly_probability
         if anomaly or block_assignments[i] == block_assignments[j]:
-            distances[i][j] = random.randint(1, B)
+            distances[i][j] = random.randint(B-2, B)
         else:
-            distances[i][j] = random.randint(B + 1, B * 3)
+            distances[i][j] = random.randint(B + 1, B +3)
 
 problem_fp =  open(basename + ".in", "w")
 problem_fp.write("{0}\n".format(N))
