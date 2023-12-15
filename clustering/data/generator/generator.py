@@ -1,5 +1,6 @@
 import sys
 import random
+import math
 
 basename = str(sys.argv[1])
 
@@ -46,12 +47,12 @@ for i in range(K):
         if i != j:
             continue
         for x in blocks[i]:
-            for _ in range(5):
+            for _ in range(max(1, math.floor(len(blocks[j]) * 0.33))):
                 y = random.choice(blocks[j])
                 if x < y:
-                    distances[x][y] = random.randint(B+1, B+10)
+                    distances[x][y] = random.randint(B+1, B+5)
                 else:
-                    distances[y][x] = random.randint(B+1, B+10)
+                    distances[y][x] = random.randint(B+1, B+5)
 
 problem_fp =  open(basename + ".in", "w")
 problem_fp.write("{0}\n".format(N))
