@@ -7,21 +7,12 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {},
     ".NETCoreApp,Version=v8.0/linux-x64": {
-      "MinTestSet/1.0.0": {
+      "Clustering/1.0.0": {
         "dependencies": {
-          "YamlDotNet": "13.7.1",
           "Solver": "1.0.0.0"
         },
         "runtime": {
-          "MinTestSet.dll": {}
-        }
-      },
-      "YamlDotNet/13.7.1": {
-        "runtime": {
-          "lib/net7.0/YamlDotNet.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.7.1.0"
-          }
+          "Clustering.dll": {}
         }
       },
       "Solver/1.0.0.0": {
@@ -35,17 +26,10 @@
     }
   },
   "libraries": {
-    "MinTestSet/1.0.0": {
+    "Clustering/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "YamlDotNet/13.7.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-X4m1PnFcJwvAj1sCDMntg/eZcX96CJLrWMiYnq41KqhFVZPuw63ZTSxIGqgdCwHWHvCAyTxheELC/VDf1HsU2A==",
-      "path": "yamldotnet/13.7.1",
-      "hashPath": "yamldotnet.13.7.1.nupkg.sha512"
     },
     "Solver/1.0.0.0": {
       "type": "reference",

@@ -1,3 +1,4 @@
 problem01.in - UNSAT - 13.5s - 30 5 10
 problem02.in - UNSAT - 227.172s - 30 6 5
 problem03.in - UNSAT - 50.486s - 30 6 3
+p6.txt.in    -   SAT - 6.8s - 70 6 3
