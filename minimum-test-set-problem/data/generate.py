@@ -1,6 +1,6 @@
 import random
 
-fileName = "p1"
+fileName = "p2"
 s = 30
 m = 50
 universum = list(range(s))
@@ -31,6 +31,7 @@ with open(fileName+".dl", "w") as f:
     for i in range(m):
         for j in collection[i]:
             print(f"c({i}, {j}).", file=f)
+    print(f"subset(0..{m-1}).", file=f)
     print("in(C) | -in(C) :- subset(C).", file=f)
     print(":- s(S1), s(S2), S1 < S2, #count{C : in(C), c(C, S1), not c(C, S2)} = 0, #count{C : in(C), c(C, S2), not c(C, S1)} = 0.", file=f)
     print(":~ in(C). [1@1, C]", file=f)
