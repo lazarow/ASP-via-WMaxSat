@@ -1,8 +1,8 @@
 import random
 
-fileName = "p2"
+fileName = "p3"
 s = 30
-m = 50
+m = 60
 universum = list(range(s))
 collection = []
 for i in range(m):
