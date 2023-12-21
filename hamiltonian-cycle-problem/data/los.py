@@ -1,14 +1,15 @@
-vertex(1..6).
-initialnode(1).
-arc(1, 2).
-arc(1, 4).
-arc(1, 5).
-arc(2, 3).
-arc(2, 6).
-arc(3, 4).
-arc(3, 6).
-arc(4, 5).
-arc(5, 6).
+import pydot
+import networkx as nx
+import sys
+
+
+fileName = sys.argv[1]
+print(f"writing file {fileName}")
+
+G = nx.gnm_random_graph(400, 3000, directed=True)
+
+footer = \
+"""
 
 % According to ASSAT: Computing Answer Sets of A Logic Program 
 % By SAT Solvers
@@ -30,3 +31,11 @@ reached(V2) :- arc(V1, V2), hc(V1, V2), initialnode(V1).
 
 % r6
 :- vertex(V), not reached(V).
+"""
+
+with open(fileName+".lp", "w") as f:
+    print(f"vertex(0..{len(G.nodes)-1}).", file=f)
+    print("initialnode(0).", file=f)
+    for e1, e2 in G.edges:
+        print(f"arc({e1}, {e2}).", file=f)
+    print(footer, file=f)
