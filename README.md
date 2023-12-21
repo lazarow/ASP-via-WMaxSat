@@ -5,7 +5,7 @@ The repository consists benchmark data that were used in the experiment, which v
 We conducted experiments on the following problems:
 
 -   clustering problem,
--   hamiltonian path problem,
+-   hamiltonian cycle problem,
 -   longest path problem,
 -   maximum cut problem,
 -   minimum cover problem,
