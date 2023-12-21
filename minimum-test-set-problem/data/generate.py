@@ -1,8 +1,10 @@
 import random
+import sys
 
-fileName = "p3"
+fileName = sys.argv[1]
+print(f"writing file {fileName} series")
 s = 24
-m = 58
+m = 50
 universum = list(range(s))
 collection = []
 for i in range(m):
