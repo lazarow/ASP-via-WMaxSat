@@ -14,7 +14,7 @@ Reszta:
 
 Podział problemów:
 
--   Hamiltonian path problem (Łukasz).
+-   Hamiltonian cycle problem (Łukasz).
 -   CLustering problem (Arek).
 -   Minimum test set problem (Łukasz).
 -   Longest path problem (Tomek).

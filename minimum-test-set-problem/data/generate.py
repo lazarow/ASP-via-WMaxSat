@@ -18,6 +18,7 @@ with open(fileName+".in", "w") as f:
         print("]", file=f)
 
 with open(fileName+".lp", "w") as f:
+    print(f"subset(0..{m-1}).", file=f)
     print(f"s(0..{s-1}).", file=f)
     for i in range(m):
         for j in collection[i]:
