@@ -1,17 +1,12 @@
-# PROBLEM GENERATING
+# CLUSTERING PROBLEM GENERATING
 
-1. Go to the folder `data`.
-2. Run `python generate PROBLEM_NAME N K B`.
-3. The generation script creates two file based on PROBLEM_NAME:
-    - problem file formatted as described below with the `.in` extension;
-    - solution file with the `.sol` extension.
+1. Go to the folder `clustering`.
+2. Run `python generate.py PROBLEM_NAME N K B S` (requires `numpy`).
+3. The generation script creates:
+    - a problem file (see the below format description) in the data folder;
+    - all ASP models (Clingo, DLV, smodels, cmodels) in the models folder.
 
-# MODEL GENERATING
-
-1. Go to a model folder (clingo, dlv, smodels, and so on).
-2. Run `python generate PROBLEM_PATH MODEL_WITHOUT_DATA_PATH > MODEL_WITH_DATA_PATH`.
-
-# PROBLEM FORMAT
+## PROBLEM FORMAT
 
 Problem files are described in the following format:
 N
@@ -41,5 +36,3 @@ The answer is yes, because:
 {0, 1}, {2}
 or
 {0, 2}, {1}
-
-
