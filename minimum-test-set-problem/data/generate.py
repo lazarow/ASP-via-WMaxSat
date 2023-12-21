@@ -1,6 +1,6 @@
 import random
 
-fileName = "p2"
+fileName = "p3"
 s = 24
 m = 58
 universum = list(range(s))
