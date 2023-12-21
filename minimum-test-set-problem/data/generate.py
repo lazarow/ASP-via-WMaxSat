@@ -4,7 +4,7 @@ import sys
 fileName = sys.argv[1]
 print(f"writing file {fileName} series")
 s = 23
-m = 50
+m = 56
 universum = list(range(s))
 collection = []
 for i in range(m):
