@@ -20,7 +20,3 @@ All solvers were installed on Ubuntu 22.04.3 (WSL) for preparation before runnin
     Version: 3.86.1  
     URL: https://www.cs.utexas.edu/users/tag/cmodels/  
     Comment: We needed to change the C++ standard to `c++98` and add `-fpermissive` to the g++ command.
--   **ASSAT**  
-    Version: _uninstalled_  
-    URL: https://web.archive.org/web/20110717180541/http://assat.cs.ust.hk/
-    Comment: The code requires major changes to be compatible with newer compilers.

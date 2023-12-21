@@ -117,21 +117,3 @@ fp.write(":- objects(X), objects(Y), in(X, B), in(Y, B), X < Y, distance(X, Y, D
 fp.close()
 print("done.")
 #endregion
-
-#region SAVING THE PROBLEM AS A SMODELS MODEL
-print("Saving the problem as a SMODELS model... ", end="")
-fp =  open("models/smodels/" + problem_name + ".txt", "w")
-fp.write("Use the DLV model as:.\n")
-fp.write("dlv --pre=lparse " +  problem_name+ ".dl | smodels\n")
-fp.close()
-print("done.")
-#endregion
-
-#region SAVING THE PROBLEM AS A CMODELS MODEL
-print("Saving the problem as a CMODELS model... ", end="")
-fp =  open("models/cmodels/" + problem_name + ".txt", "w")
-fp.write("Use the DLV model as:.\n")
-fp.write("dlv --pre=lparse " +  problem_name+ ".dl | cmodels\n")
-fp.close()
-print("done.")
-#endregion

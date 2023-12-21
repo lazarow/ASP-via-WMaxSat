@@ -1,14 +1,29 @@
-# CLUSTERING
+# Clustering
 
-## PROBLEM GENERATING
+The directory contains the benchmark data for the Clustering problem. It contains the python script that generates random problem
+instances (see the procedure described below).
+
+The configurations that were used for generating benchmark alongside with the results are described in `problem-configurations.ods` (the LibreOffice Calc format).
+
+## Usage
 
 1. Go to the folder `clustering`.
 2. Run `python generate.py PROBLEM_NAME N K B S` (requires `numpy`).
 3. The generation script creates:
     - a problem file (see the below format description) in the data folder;
-    - all ASP models (Clingo, DLV, smodels, cmodels) in the models folder.
+    - Clingo and DLV models in the models folder.
 
-## PROBLEM FORMAT
+## Generating procedure
+
+1. Find `K` circles centroids started from the point `(0,0)`. Point coordinates are drawn from normally distributed integers
+   ranged from `[-R,R]` (see `generated.py` for details). The default value of `R` is `25`.
+2. Remove duplicated centroids (possibly reduces `K`).
+3. Started from each centroid position, generate `N / K` points, which positions are drawn from normally distributed integers
+   ranged from `[-R,R]`.
+4. Remove duplicated points (possibly reduces `N`).
+5. Calculate distances between points based on Manhattan Distance.
+
+## Problem file format
 
 Problem files are described in the following format:
 
