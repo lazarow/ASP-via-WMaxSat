@@ -54,21 +54,3 @@ Run command: `time dlv --pre=lparse problem01.dl | timelimit -t240 cmodels -out_
 Comment: It requires _dotnet-sdk-8.0_ (or _dotnet-runtime-8.0_) and two MaxSAT solvers downloaded from [here](https://maxsat-evaluations.github.io/2023/descriptions.html), i.e. WMaxCDCL and Open-WBO.
 Run command: `time timelimit -t240 wmaxsat_clustering problem01.in`
 Note: WMaxSat executables use a general problem file as an input, hence they are merged programs consisting a problem reader and a ASP solver.
-
-Wojtek:
-
--   przygotowanie wersji pod WMaxSat i Clingo pod wszystkie problemy + daje znać, że gotowe.
-
-Reszta:
-
--   przygotowanie wersji pod DLV, CModels (tylko dla problemów decyzyjnych) oraz SModels;
--   generowanie losowych instancji problemów (ok. 10 instancji na problem i celujemy w kilka minut liczenia);
--   przygotowanie środowiska do testów i odpalenie (Arek).
-
-Podział problemów:
-
--   Hamiltonian path problem (Łukasz).
--   CLustering problem (Arek).
--   Minimum test set problem (Łukasz).
--   Longest path problem (Tomek).
--   Maximum cut problem (Tomek).
