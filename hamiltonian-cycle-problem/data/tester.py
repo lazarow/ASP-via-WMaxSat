@@ -1,7 +1,7 @@
 import subprocess
 import time
 
-for i in range(1, 11):
+for i in range(5, 11):
     while True:        
         start = time.time()
         file_name = f"p{i}"
