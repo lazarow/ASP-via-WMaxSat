@@ -6,7 +6,20 @@ import sys
 fileName = sys.argv[1]
 print(f"writing file {fileName}")
 
-G = nx.gnm_random_graph(400, 3000, directed=True)
+node_count = 80
+edge_count = 320
+
+idx_from = set()
+idx_to = set()
+
+while True:
+    G = nx.gnm_random_graph(node_count, edge_count, directed=True)
+    for e1, e2 in G.edges:
+        idx_from.add(e1)
+        idx_to.add(e2)
+    
+    if len(idx_from) == node_count == len(idx_to):
+        break
 
 footer = \
 """
