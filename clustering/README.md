@@ -3,7 +3,7 @@
 The directory contains the benchmark data for the Clustering problem. It contains the python script that generates random problem
 instances (see the procedure described below).
 
-The configurations that were used for generating benchmark alongside with the results are described in `problem-configurations.ods` (the LibreOffice Calc format).
+The configurations that were used for generating benchmark alongside with the results are described in `clustering_results.ods` (the LibreOffice Calc format).
 
 ## Usage
 

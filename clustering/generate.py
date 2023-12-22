@@ -72,7 +72,7 @@ print("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
 #region SAVING THE PROBLEM AS A PROBLEM FILE
 print("Saving the problem as a problem file (see README to check the format)... ", end="")
 fp =  open("data/" + problem_name + ".in", "w")
-fp.write("{0}\n".format(N))
+fp.write("{0}\n".format(N-1))
 for i in range(N - 1):
     for j in range(i + 1, N):
         fp.write("{0} {1} {2}\n".format(i, j, distances[i][j]))
@@ -84,7 +84,7 @@ print("done.")
 #region SAVING THE PROBLEM AS A CLINGO MODEL
 print("Saving the problem as a Clingo model... ", end="")
 fp =  open("models/clingo/" + problem_name + ".lp", "w")
-fp.write("objects(0..{0}).\n".format(N))
+fp.write("objects(0..{0}).\n".format(N-1))
 for i in range(N - 1):
     for j in range(i + 1, N):
         fp.write("distance({0},{1},{2}).\n".format(i, j, distances[i][j]))
@@ -103,7 +103,7 @@ print("done.")
 #region SAVING THE PROBLEM AS A DLV MODEL
 print("Saving the problem as a DLV model... ", end="")
 fp =  open("models/dlv/" + problem_name + ".dl", "w")
-fp.write("objects(0..{0}).\n".format(N))
+fp.write("objects(0..{0}).\n".format(N-1))
 for i in range(N - 1):
     for j in range(i + 1, N):
         fp.write("distance({0},{1},{2}).\n".format(i, j, distances[i][j]))

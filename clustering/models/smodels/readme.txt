@@ -1,2 +1,2 @@
-Use the DLV model as:.
-dlv --pre=lparse problemXX.dl | smodels
+Use the Clingo model as:.
+gringo --output=smodels problem01.lp | smodels 1

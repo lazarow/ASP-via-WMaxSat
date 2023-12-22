@@ -42,7 +42,7 @@ Run command: `time timelimit -t240 clingo -q problem01.lp`
 Version: 2.34  
 URL: http://www.tcs.hut.fi/Software/smodels/  
 Comment: We needed to change the C++ standard to `--std=c++98`.
-Run command: `time gringo --output=smodels problem01.lp | timelimit -t240 smodels 1`
+Run command: `time gringo --output=smodels problem01.lp | timelimit -t240 smodels 1 (0 for a minimization problem)`
 
 **Cmodels**  
 Version: 3.86.1  
