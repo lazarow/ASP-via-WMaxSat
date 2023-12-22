@@ -7,10 +7,10 @@ The configurations that were used for generating benchmark alongside with the re
 
 ## Usage
 
-1. Go to the folder `clustering`.
+1. Go to the folder `data`.
 2. Run `python generate.py PROBLEM_NAME N K B S` (requires `numpy`).
 3. The generation script creates:
-    - a problem file (see the below format description) in the data folder;
+    - a problem file (see the below format description) in the WMaxSAT folder;
     - Clingo and DLV models in the models folder.
 
 ## Generating procedure
