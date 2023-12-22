@@ -8,7 +8,7 @@ fileName = sys.argv[1]
 print(f"writing file {fileName}")
 
 node_count = 30
-edge_count = 120
+edge_count = 110
 
 idx_from = set()
 idx_to = set()
