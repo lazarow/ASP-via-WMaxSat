@@ -1,25 +1,41 @@
 import pydot
 import networkx as nx
 import sys
+from random import sample, randrange
 
 
 fileName = sys.argv[1]
 print(f"writing file {fileName}")
 
-node_count = 80
-edge_count = 320
+node_count = 370
+edges = set()
 
-idx_from = set()
-idx_to = set()
+nodes_list = [i for i in range(1, node_count)]
 
-while True:
-    G = nx.gnm_random_graph(node_count, edge_count, directed=True)
-    for e1, e2 in G.edges:
-        idx_from.add(e1)
-        idx_to.add(e2)
+from_node = 0
+
+while len(nodes_list) > 0:     
+    to_node = sample(nodes_list, k=1)[0]
+    edges.add((from_node, to_node))
+    from_node = to_node
+    nodes_list.remove(to_node) 
+
+edges.add((from_node, 0))
+
+nodes_list = [i for i in range(0, node_count)]
+
+while len(nodes_list) > 0:
+    from_node = sample(nodes_list, k=1)[0]
+    for _ in range(400):
+        to_node = randrange(0, node_count)
+        if from_node != to_node:
+            edges.add((from_node, to_node))
+    nodes_list.remove(from_node)
+
     
-    if len(idx_from) == node_count == len(idx_to):
-        break
+G: nx.DiGraph = nx.DiGraph()
+G.add_nodes_from([i for i in range(0, node_count)])
+G.add_edges_from(edges)
 
 footer = \
 """
