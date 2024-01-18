@@ -13,6 +13,8 @@ p10	57,639	5,081*	TL	5,41
 DATA;
 
 $data = array_map('trim', explode("\n", trim($data)));
+$firstRow = preg_split('/\s+/', $data[0]);
+$total = array_fill(0, count($firstRow), 0);
 
 for ($i = 0; $i < count($data); ++$i) {
     $row = preg_split('/\s+/', $data[$i]);
@@ -22,29 +24,49 @@ for ($i = 0; $i < count($data); ++$i) {
         }
         if (is_numeric($row[$j][0]) && strpos($row[$j], ',') !== false) {
             if (strpos($row[$j], '*') !== false) {
+                $value = (float) strtr(mb_substr($row[$j], 0, -1), [',' => '.']);
+                $total[$j] += $value;
                 echo '$ \\mathbf{' . number_format(
-                    (float) strtr(mb_substr($row[$j], 0, -1), [',' => '.']),
+                    $value,
                     2,
                     '.',
                     ''
-                ) . '} $ s';
+                ) . '} $ \unit{\second}';
             } else {
+                $value = (float) strtr($row[$j], [',' => '.']);
+                $total[$j] += $value;
                 echo '$ ' . number_format(
                     (float) strtr($row[$j], [',' => '.']),
                     2,
                     '.',
                     ''
-                ) . ' $ s';
+                ) . ' $ \unit{\second}';
             }
         } else if (is_numeric($row[$j])) {
+            $total[$j] += (int) $row[$j];
             echo '$ ' . ((int) $row[$j]) . ' $';
         } else if ($row[$j] === 'Tak') {
             echo 'Yes';
         } else if ($row[$j] === 'Nie') {
             echo 'No';
+        } else if ($row[$j] === 'TL') {
+            $total[$j] += 240;
+            echo $row[$j];
         } else {
             echo $row[$j];
         }
     }
     echo " \\\\ \n";    
 }
+
+echo "\midrule\n";
+echo 'Total';
+for ($i = 1; $i < count($total); ++$i) {
+    echo ' & $ ' . number_format(
+        $total[$i],
+        2,
+        '.',
+        ''
+    ) . ' $ \unit{\second}';
+}
+echo " \\\\ \n";

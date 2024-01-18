@@ -4,12 +4,13 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{siunitx}
 
 \begin{document}
 
-\section{Clustering problem}
+\section{Clustering}
 
-The Clustering problem is NP-hard \cite{brucker1978complexity}. It is defined as follows:
+\textsc{Clustering} is NP-hard \cite{brucker1978complexity}. It is defined as follows:
 There is a finite set $ X $ of objects ($ |X| = N $), a distance $ d(x, y) \in \mathbb{Z}^{+}_{0} $ for each pair
 $ x,y \in X $, and two positive integers $ K $ and $ B $. Is there a partition of $ X $ into disjoint sets $ X_1, X_2, \cdots, X_K $
 such that, for all pairs $ x,y \in X_i $, $ d(x,y) \leq B $, where $ 1 \leq i \leq K $?
@@ -23,7 +24,7 @@ Problems' specification are depicted in relevant tables.
 
 \section{Results}
 
-Table \ref{tab:clustering_results} presents the experiment results of the Clustering problem.
+Table \ref{tab:clustering_results} presents the experiment results of \textsc{Clustering}.
 DLV achieved the best results in all problems. WMaxSAT was the second losing against Clingo in the first two problems only.
 Similarly, cmodels outperformed Clingo for larger problems but lost completly againts WMaxSAT.
 Eventually, smodel performed very poorly compared to other solvers.
@@ -33,7 +34,7 @@ Note that in Table \ref{tab:clustering_results}, \ref{tab:longest_path_results},
 TL denotes the time limit that was 240 s in every experiment. The best results are marked in bold.
 
 \begin{table}[h]
-\caption{The Clustering problems' specification and the results. \textit{Dec.} denotes a \textit{decision}.}
+\caption{\textsc{Clustering} specification and the results. \textit{Dec.} denotes a \textit{decision}.}
 \label{tab:clustering_results}
 \vspace{1em}
 \scriptsize
@@ -42,7 +43,7 @@ TL denotes the time limit that was 240 s in every experiment. The best results a
 \toprule
 Problem & N & K & B & Dec. & Clingo & DLV & smodels & cmodels & WMaxSAT \\
 \midrule
-p1 & $ 992 $ & $ 5 $ & $ 45 $ & Yes & $ 5.81 $ s & $ \mathbf{1.49} $ s & TL & $ 7.12 $ s & $ 5.04 $ s \\
+p1 & $ 992 $ & $ 5 $ & $ 45 $ & Yes & $ 5.81 $ \SI{0}{ms} & $ \mathbf{1.49} $ s & TL & $ 7.12 $ s & $ 5.04 $ s \\
 p2 & $ 992 $ & $ 5 $ & $ 44 $ & No & $ 5.86 $ s & $ \mathbf{1.70} $ s & TL & $ 8.31 $ s & $ 5.23 $ s \\
 p3 & $ 1271 $ & $ 5 $ & $ 49 $ & Yes & $ 11.25 $ s & $ \mathbf{2.32} $ s & $ 58.28 $ s & $ 9.50 $ s & $ 6.42 $ s \\
 p4 & $ 1271 $ & $ 5 $ & $ 48 $ & No & $ 11.29 $ s & $ \mathbf{2.40} $ s & TL & $ 10.93 $ s & $ 6.74 $ s \\
