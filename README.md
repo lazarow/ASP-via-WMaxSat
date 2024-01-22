@@ -1,15 +1,16 @@
-# Solving ASP via the WeightedMaxSat (WMaxSat) solver
+# Solving ASP via the Weighted MaxSat solver
 
-The repository consists benchmark data that were used in the experiment, which verifies our new solver for _Answer Set Programming_ (ASP) named **WMaxSat**.
+The repository consists benchmark data that were used in the experiment, which verifies our new solver for _Answer Set Programming_ (ASP) named **maxmodels**.
 
 We conducted experiments on the following problems:
 
 -   clustering problem,
--   hamiltonian cycle problem,
 -   longest path problem,
 -   maximum cut problem,
+-   maximum edge-weighted clique problem,
 -   minimum cover problem,
 -   minimum test set problem.
+-   job-shop scheduling problem.
 
 Each problem has its own folders that holds benchmark data, models, and necessary descriptions.
 
@@ -42,18 +43,19 @@ Run command: `time timelimit -t240 clingo -q p1.lp`
 Version: 2.34  
 URL: http://www.tcs.hut.fi/Software/smodels/  
 Comment: We needed to change the C++ standard to `--std=c++98`.
-Run command: `time gringo --output=smodels p1.lp | timelimit -t240 smodels 1 (0 for a minimization problem)`
+Run command (for a decision problem): `time gringo --output=smodels p1.lp | timelimit -t240 smodels 1`  
+Run command (for an optimization problem): `time gringo --output=smodels p1.lp | timelimit -t240 smodels 0`
 
 **Cmodels**  
 Version: 3.86.1  
 URL: https://www.cs.utexas.edu/users/tag/cmodels/  
 Comment: We needed to change the C++ standard to `--std=c++98` and add `-fpermissive` to the g++ command.
-Run command: `time dlv --pre=lparse p1.dl | timelimit -t240 cmodels -out_f_c`
+Run command (only for a decision problem): `time dlv --pre=lparse p1.dl | timelimit -t240 cmodels -out_f_c`
 
-**WMaxSat**  
+**maxmodels**  
 Comment: It requires _dotnet-sdk-8.0_ (or _dotnet-runtime-8.0_) and two MaxSAT solvers downloaded from [here](https://maxsat-evaluations.github.io/2023/descriptions.html), i.e. WMaxCDCL and Open-WBO.
-Run command: `time timelimit -t240 wmaxsat_clustering p1.in`
-Note: WMaxSat executables use a general problem file as an input, hence they are merged programs consisting a problem reader and a ASP solver.
+Run command: `time timelimit -t240 maxmodels_clustering p1.in`
+Note: maxmodels executables use a general problem file as an input, hence they are merged programs consisting a problem reader and a ASP solver.
 
 ## Experiments
 
