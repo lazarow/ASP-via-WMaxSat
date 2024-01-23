@@ -5,12 +5,12 @@ The repository consists benchmark data that were used in the experiment, which v
 We conducted experiments on the following problems:
 
 -   clustering problem,
--   job-shop scheduling problem,
 -   longest path problem,
 -   maximum cut problem,
 -   maximum edge-weighted clique problem,
 -   minimum cover problem,
--   minimum test set problem.
+-   minimum test set problem,
+-   precedence constrained scheduling.
 
 Each problem has its own folders that holds benchmark data, models, and necessary descriptions.
 
