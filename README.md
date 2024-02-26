@@ -53,7 +53,7 @@ Comment: We needed to change the C++ standard to `--std=c++98` and add `-fpermis
 Run command (only for a decision problem): `time dlv --pre=lparse p1.dl | timelimit -t240 cmodels -out_f_c`
 
 **maxmodels**  
-Comment: It requires _dotnet-sdk-8.0_ (or _dotnet-runtime-8.0_) and two MaxSAT solvers downloaded from [here](https://maxsat-evaluations.github.io/2023/descriptions.html), i.e. WMaxCDCL and Open-WBO.
+Comment: It requires _dotnet-sdk-8.0_ (or _dotnet-runtime-8.0_) and two MaxSAT solvers downloaded from [here](https://maxsat-evaluations.github.io/2023/descriptions.html), i.e. WMaxCDCL and Open-WBO. Both MaxSAT solvers should be available via PATH as the `wmaxcdcl` and `open-wbo` commands.
 Run command: `time timelimit -t240 maxmodels_clustering p1.in`
 Note: maxmodels executables use a general problem file as an input, hence they are merged programs consisting a problem reader and a ASP solver.
 
